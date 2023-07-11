@@ -133,9 +133,27 @@ const someProducts = [
   },
 ];
 
+const tarotCardsNumbers = [1, 10, 3, 5, 2, 8, 6, 4, 7, 9];
+
+const tarotCardsNames = [
+  "The Magician",
+  "The High Priestess",
+  "The Empress",
+  "The Emperor",
+  "The Hierophant",
+  "The Lovers",
+  "The Chariot",
+  "Strength",
+  "The Hermit",
+  "Wheel of Fortune",
+];
+
 module.exports = {
   catArt,
   someNums,
   someProducts,
   someWords,
+  tarotCardsNumbers,
+  tarotCardsNames,
 };
+

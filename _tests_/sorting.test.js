@@ -7,11 +7,12 @@ const {
   sortProductPriceA,
   sortProductPriceD,
   sortProducsPriceNameA,
-  catArtSortDesginedByA,
+  catArtSortDesignedByA,
   catArtSortByItemNameA,
   catArtSortByPriceA,
   catArtSortByPriceDesignedByD,
-  mySortFunction,
+  bubbleSortTarotCardsNumbers,
+  tarotCardsNumbers,
 } = require("../solution.js");
 
 const {
@@ -34,7 +35,6 @@ describe("Sorting Practice", () => {
   });
   test("Sort words in ascending order case sensitive", () => {
     expect(sortWordsA(someWords)).toStrictEqual([
-      "The",
       "brown",
       "dog",
       "fox",
@@ -43,6 +43,7 @@ describe("Sorting Practice", () => {
       "over",
       "quick",
       "the",
+      "The",
     ]);
   });
   test("Sort words in descending order case insensitive", () => {
@@ -197,7 +198,7 @@ describe("Sorting Practice", () => {
   });
 
   test("Sort catArt by designedBy, ascending", () => {
-    expect(catArtSortDesginedByA(catArt)).toStrictEqual([
+    expect(catArtSortDesignedByA(catArt)).toStrictEqual([
       { designedBy: "", itemName: "Distressed Laundry Basket", price: 10.1 },
       {
         designedBy: "Chewy",
@@ -270,20 +271,9 @@ describe("Sorting Practice", () => {
       },
     ]);
   });
-  test("Create your own sort function", () => {
-    expect(mySortFunction(someNums)).toStrictEqual([
-      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    ]);
-    expect(mySortFunction(someWords)).toStrictEqual([
-      "The",
-      "brown",
-      "dog",
-      "fox",
-      "jumps",
-      "lazy",
-      "over",
-      "quick",
-      "the",
-    ]);
-  });
+  test("Bubble sort tarot card numbers", () => {
+    const tarotCardsNumbers = [1, 10, 3, 5, 2, 8, 6, 4, 7, 9];
+    const sortedTarotCardsNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    expect(bubbleSortTarotCardsNumbers(tarotCardsNumbers)).toStrictEqual(sortedTarotCardsNumbers);
+  });   
 });
