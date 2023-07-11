@@ -72,6 +72,15 @@ const sortProductNamesA = (arr) => {
 
 // sort products by price, ascending order
 const sortProductPriceA = (arr) => {
+    for (let i = 1; i < arr.length; i++){
+        let current = arr[i].price;
+        let j = i - 1;
+
+        while (j >= 0 && arr[j].price > current){
+            [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+            j--;
+        }
+    }
     return arr;
 };
 
