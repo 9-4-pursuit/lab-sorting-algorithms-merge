@@ -105,8 +105,19 @@ const sortProductPriceD = (someProducts) => {
 };
 
 // sort products by price, then by name, ascending order
-const sortProducsPriceNameA = () => {};
-
+const sortProducsPriceNameA = (someProducts) => {
+  for (let i = 0; i < someProducts.length; i++) {
+    let curr = someProducts[i];
+    let j = i - 1;
+    //sort first by price then by name then by name ascending
+    while (j >= 0 && (someProducts[j].price > curr.price || (someProducts[j].price === curr.price && someProducts[j].name.localeCompare(curr.name) > 0))) {
+      someProducts[j + 1] = someProducts[j];
+      j--;
+  }
+  someProducts[j + 1] = curr;
+}
+return someProducts;
+};
 // sort catArt by designed by
 const catArtSortDesginedByA = () => {};
 
