@@ -1,7 +1,18 @@
 const { catArt, someNums, someProducts, someWords } = require("./data/data.js");
 
 // sort numbers in ascending order
-const sortNumsA = () => {};
+const sortNumsA = (someNums) => {
+  for (let i = 1; i < someNums.length; i++){
+    let curr = someNums[i];
+    let j = i - 1;
+    while (j >= 0 && someNums[j] > curr) {
+      someNums[j + 1] = someNums[j];
+      j--;
+    }
+    someNums[j + 1] = curr;
+  }
+  return someNums;
+};
 
 // sort numbers in descending order
 const sortNumsD = () => {};
