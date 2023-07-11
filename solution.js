@@ -15,7 +15,18 @@ const sortNumsA = (someNums) => {
 };
 
 // sort numbers in descending order
-const sortNumsD = () => {};
+const sortNumsD = (someNums) => {
+  for (let i = 1; i < someNums.length; i++){
+    let curr = someNums[i];
+    let j = i - 1;
+    while (j >= 0 && someNums[j] < curr) {
+      someNums[j + 1] = someNums[j];
+      j--;
+    }
+    someNums[j + 1] = curr;
+  }
+  return someNums;
+};
 
 // sort words in ascending order case sensitive
 const sortWordsA = () => {};
