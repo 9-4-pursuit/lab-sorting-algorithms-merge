@@ -107,6 +107,15 @@ const sortProducsPriceNameA = (arr) => {
 
 // sort catArt by designed by
 const catArtSortDesginedByA = (arr) => {
+    for (let i = 1; i < arr.length; i++){
+        let current = arr[i].designedBy;
+        let j = i - 1;
+
+        while (j >= 0 && arr[j].designedBy > current){
+            [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+            j--;
+        }
+    }
     return arr;
 };
 
