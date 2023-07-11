@@ -1,4 +1,4 @@
-const { catArt, someNums, someProducts, someWords } = require("./data/data.js");
+const { catArt, someNums, someProducts, sortWords } = require("./data/data.js");
 
 // sort numbers in ascending order
 const sortNumsA = (someNums) => {
@@ -29,10 +29,36 @@ const sortNumsD = (someNums) => {
 };
 
 // sort words in ascending order case sensitive
-const sortWordsA = () => {};
+const sortWordsA = (sortWords) => {
+  // START AT 1 compare and sort elements from the second position.
+  for (let i = 1; i < sortWords.length; i++) {
+    let curr = sortWords[i];
+    let j = i - 1;
+    while (j >= 0 && sortWords[j].localeCompare(curr) > 0) {
+      sortWords[j + 1] = sortWords[j];
+      j--;
+    }
+    sortWords[j + 1] = curr;
+  }
+  console.log(sortWords)
+  return sortWords;
+};
 
 // sort words in descending order case insensitive
-const sortWordsD = () => {};
+const sortWordsD = (sortWords) => {
+    // START AT 1 compare and sort elements from the second position.
+    for (let i = 1; i < sortWords.length; i++) {
+      let curr = sortWords[i];
+      let j = i - 1;
+      while (j >= 0 && sortWords[j].localeCompare(curr) < 0) {
+        sortWords[j + 1] = sortWords[j];
+        j--;
+      }
+      sortWords[j + 1] = curr;
+    }
+    console.log(sortWords)
+    return sortWords;
+  };
 
 // sort products by name, ascending order case insensitive
 const sortProductNamesA = () => {};

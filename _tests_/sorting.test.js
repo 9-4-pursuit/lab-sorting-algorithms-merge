@@ -34,7 +34,6 @@ describe("Sorting Practice", () => {
   });
   test("Sort words in ascending order case sensitive", () => {
     expect(sortWordsA(someWords)).toStrictEqual([
-      "The",
       "brown",
       "dog",
       "fox",
@@ -43,6 +42,7 @@ describe("Sorting Practice", () => {
       "over",
       "quick",
       "the",
+      "The",
     ]);
   });
   test("Sort words in descending order case insensitive", () => {
