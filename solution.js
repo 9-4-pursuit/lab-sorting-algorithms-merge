@@ -150,12 +150,12 @@ const catArtSortByPriceA = (catArt) => {
 
 const convertPrice = (price) => {
   if (typeof price === "number") {
-    return price * 1000;  // Multiplies regular prices to make them larger
+    return price;  // If the price is already a number, return it as is
   } else if (typeof price === "string") {
     if (price.includes("♇♇")) {
-      return parseFloat(price.replace("♇♇", ""));
+      return parseFloat(price.replace("♇♇", "")) * 10;  // Convert ♇♇ prices to dollars
     } else {
-      return parseFloat(price) * 1000; // Multiplies regular prices to make them larger
+      return parseFloat(price);  // If the price is a string number, parse it to a float
     }
   }
 };
