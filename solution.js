@@ -100,6 +100,8 @@ const sortProductPriceD = (arr) => {
 
 // sort products by price, then by name, ascending order
 const sortProducsPriceNameA = (arr) => {
+    sortProductNamesA(arr);
+    sortProductPriceA(arr);
     return arr;
 };
 
