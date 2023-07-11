@@ -61,7 +61,19 @@ const sortWordsD = (sortWords) => {
   };
 
 // sort products by name, ascending order case insensitive
-const sortProductNamesA = () => {};
+const sortProductNamesA = (someProducts) => {
+  for (let i = 1; i < someProducts.length; i++) {
+    let curr = someProducts[i];
+    let j = i - 1;
+    // sort products by name
+    while(j >= 0 && someProducts[j].name.localeCompare(curr.name, undefined, {sensitivity: 'base'}) > 0) {
+      someProducts[j + 1] = someProducts[j];
+      j--;
+    }
+    someProducts[j + 1] = curr;
+  }
+  return someProducts;
+};
 
 // sort products by price, ascending order
 const sortProductPriceA = () => {};
