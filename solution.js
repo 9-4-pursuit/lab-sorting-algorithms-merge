@@ -1,4 +1,4 @@
-const { catArt, someNums, someProducts, sortWords } = require("./data/data.js");
+const { catArt, someNums, someProducts, sortWords, tarotCardsNumbers, tarotCardsNames } = require("./data/data.js");
 
 // sort numbers in ascending order
 const sortNumsA = (someNums) => {
@@ -169,31 +169,28 @@ const convertPrice = (price) => {
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = (arr, order = "asc") => {
-  const length = arr.length;
+
+const bubbleSortTarotCardsNumbers = (tarotCardsNumbers) => {
+  let sortedArray = [...tarotCardsNumbers];  // Create a copy of the array
+  const length = sortedArray.length;
 
   for (let i = 0; i < length - 1; i++) {
     for (let j = 0; j < length - 1 - i; j++) {
       let shouldSwap = false;
 
-      if (typeof arr[j] === "number" && typeof arr[j + 1] === "number") {
-        // Sort numbers
-        shouldSwap = order === "asc" ? arr[j] > arr[j + 1] : arr[j] < arr[j + 1];
-      } else if (typeof arr[j] === "string" && typeof arr[j + 1] === "string") {
-        // Sort words (case-sensitive)
-        shouldSwap =
-          order === "asc" ? arr[j].localeCompare(arr[j + 1]) > 0 : arr[j].localeCompare(arr[j + 1]) < 0;
-      }
+      // Sort numbers
+      shouldSwap = sortedArray[j] > sortedArray[j + 1];  // We are always sorting in ascending order
 
       if (shouldSwap) {
         // Swap elements
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        [sortedArray[j], sortedArray[j + 1]] = [sortedArray[j + 1], sortedArray[j]];
       }
     }
   }
 
-  return arr;
+  return sortedArray;
 };
+
 
 
 module.exports = {
@@ -207,5 +204,5 @@ module.exports = {
   sortProducsPriceNameA,
   catArtSortDesignedByA,
   catArtSortByPriceA,
-  mySortFunction,
+  bubbleSortTarotCardsNumbers,
 };

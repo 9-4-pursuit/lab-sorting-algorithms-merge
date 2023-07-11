@@ -11,7 +11,8 @@ const {
   catArtSortByItemNameA,
   catArtSortByPriceA,
   catArtSortByPriceDesignedByD,
-  mySortFunction,
+  bubbleSortTarotCardsNumbers,
+  tarotCardsNumbers,
 } = require("../solution.js");
 
 const {
@@ -270,20 +271,9 @@ describe("Sorting Practice", () => {
       },
     ]);
   });
-  test("Create your own sort function", () => {
-    expect(mySortFunction(someNums)).toStrictEqual([
-      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    ]);
-    expect(mySortFunction(someWords)).toStrictEqual([
-      "The",
-      "brown",
-      "dog",
-      "fox",
-      "jumps",
-      "lazy",
-      "over",
-      "quick",
-      "the",
-    ]);
-  });
+  test("Bubble sort tarot card numbers", () => {
+    const tarotCardsNumbers = [1, 10, 3, 5, 2, 8, 6, 4, 7, 9];
+    const sortedTarotCardsNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    expect(bubbleSortTarotCardsNumbers(tarotCardsNumbers)).toStrictEqual(sortedTarotCardsNumbers);
+  });   
 });
