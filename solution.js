@@ -135,7 +135,31 @@ const catArtSortDesignedByA = (catArt) => {
 
 
 // sort catArt by price
-const catArtSortByPriceA = () => {};
+const catArtSortByPriceA = (catArt) => {
+  for (let i = 1; i < catArt.length; i++) {
+    let curr = catArt[i];
+    let j = i - 1;
+    while (j >= 0 && convertPrice(catArt[j].price) > convertPrice(curr.price)) {
+      catArt[j + 1] = catArt[j];
+      j--;
+    }
+    catArt[j + 1] = curr;
+  }
+  return catArt;
+};
+
+const convertPrice = (price) => {
+  if (typeof price === "number") {
+    return price * 1000;  // Multiplies regular prices to make them larger
+  } else if (typeof price === "string") {
+    if (price.includes("♇♇")) {
+      return parseFloat(price.replace("♇♇", ""));
+    } else {
+      return parseFloat(price) * 1000; // Multiplies regular prices to make them larger
+    }
+  }
+};
+
 
 // Create your own sort function
 // it should sort in ascending order
@@ -145,7 +169,32 @@ const catArtSortByPriceA = () => {};
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = () => {};
+const mySortFunction = (arr, order = "asc") => {
+  const length = arr.length;
+
+  for (let i = 0; i < length - 1; i++) {
+    for (let j = 0; j < length - 1 - i; j++) {
+      let shouldSwap = false;
+
+      if (typeof arr[j] === "number" && typeof arr[j + 1] === "number") {
+        // Sort numbers
+        shouldSwap = order === "asc" ? arr[j] > arr[j + 1] : arr[j] < arr[j + 1];
+      } else if (typeof arr[j] === "string" && typeof arr[j + 1] === "string") {
+        // Sort words (case-sensitive)
+        shouldSwap =
+          order === "asc" ? arr[j].localeCompare(arr[j + 1]) > 0 : arr[j].localeCompare(arr[j + 1]) < 0;
+      }
+
+      if (shouldSwap) {
+        // Swap elements
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+
+  return arr;
+};
+
 
 module.exports = {
   sortNumsA,
