@@ -89,9 +89,20 @@ const sortProductPriceA = (someProducts) => {
   }
   return someProducts;
 };
-
 // sort products by price, descending order
-const sortProductPriceD = () => {};
+const sortProductPriceD = (someProducts) => {
+  for (let i = 1; i < someProducts.length; i++) {
+    let curr = someProducts[i];
+    let j = i - 1;
+    // sort products by name
+    while(j >= 0 && someProducts[j].price < curr.price) {
+      someProducts[j + 1] = someProducts[j];
+      j--;
+    }
+    someProducts[j + 1] = curr;
+  }
+  return someProducts;
+};
 
 // sort products by price, then by name, ascending order
 const sortProducsPriceNameA = () => {};
