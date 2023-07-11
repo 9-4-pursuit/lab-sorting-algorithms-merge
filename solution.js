@@ -1,34 +1,54 @@
 const { catArt, someNums, someProducts, someWords } = require("./data/data.js");
 
 // sort numbers in ascending order
-const sortNumsA = () => {};
+const sortNumsA = (arr) => {
+    return arr;
+};
 
 // sort numbers in descending order
-const sortNumsD = () => {};
+const sortNumsD = (arr) => {
+    return arr;
+};
 
 // sort words in ascending order case sensitive
-const sortWordsA = () => {};
+const sortWordsA = (arr) => {
+    return arr;
+};
 
 // sort words in descending order case insensitive
-const sortWordsD = () => {};
+const sortWordsD = (arr) => {
+    return arr;
+};
 
 // sort products by name, ascending order case insensitive
-const sortProductNamesA = () => {};
+const sortProductNamesA = (arr) => {
+    return arr;
+};
 
 // sort products by price, ascending order
-const sortProductPriceA = () => {};
+const sortProductPriceA = (arr) => {
+    return arr;
+};
 
 // sort products by price, descending order
-const sortProductPriceD = () => {};
+const sortProductPriceD = (arr) => {
+    return arr;
+};
 
 // sort products by price, then by name, ascending order
-const sortProducsPriceNameA = () => {};
+const sortProducsPriceNameA = (arr) => {
+    return arr;
+};
 
 // sort catArt by designed by
-const catArtSortDesginedByA = () => {};
+const catArtSortDesginedByA = (arr) => {
+    return arr;
+};
 
 // sort catArt by price
-const catArtSortByPriceA = () => {};
+const catArtSortByPriceA = (arr) => {
+    return arr;
+};
 
 // Create your own sort function
 // it should sort in ascending order
@@ -38,7 +58,9 @@ const catArtSortByPriceA = () => {};
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = () => {};
+const mySortFunction = (arr, order) => {
+    return arr;
+};
 
 module.exports = {
   sortNumsA,
