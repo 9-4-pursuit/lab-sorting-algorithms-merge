@@ -7,7 +7,7 @@ const {
   sortProductPriceA,
   sortProductPriceD,
   sortProducsPriceNameA,
-  catArtSortDesginedByA,
+  catArtSortDesignedByA,
   catArtSortByItemNameA,
   catArtSortByPriceA,
   catArtSortByPriceDesignedByD,
@@ -197,7 +197,7 @@ describe("Sorting Practice", () => {
   });
 
   test("Sort catArt by designedBy, ascending", () => {
-    expect(catArtSortDesginedByA(catArt)).toStrictEqual([
+    expect(catArtSortDesignedByA(catArt)).toStrictEqual([
       { designedBy: "", itemName: "Distressed Laundry Basket", price: 10.1 },
       {
         designedBy: "Chewy",

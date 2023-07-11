@@ -119,7 +119,20 @@ const sortProducsPriceNameA = (someProducts) => {
 return someProducts;
 };
 // sort catArt by designed by
-const catArtSortDesginedByA = () => {};
+const catArtSortDesignedByA = (catArt) => {
+  for (let i = 1; i < catArt.length; i++) {
+    let curr = catArt[i];
+    let j = i - 1;
+    while (j >= 0 && catArt[j].designedBy.localeCompare(curr.designedBy, undefined, { sensitivity: 'case' }) > 0) {
+      catArt[j + 1] = catArt[j];
+      j--;
+    }
+    catArt[j + 1] = curr;
+  }
+  return catArt;
+};
+
+
 
 // sort catArt by price
 const catArtSortByPriceA = () => {};
@@ -143,7 +156,7 @@ module.exports = {
   sortProductPriceA,
   sortProductPriceD,
   sortProducsPriceNameA,
-  catArtSortDesginedByA,
+  catArtSortDesignedByA,
   catArtSortByPriceA,
   mySortFunction,
 };
