@@ -58,6 +58,15 @@ const sortWordsD = (arr) => {
 
 // sort products by name, ascending order case insensitive
 const sortProductNamesA = (arr) => {
+    for (let i = 1; i < arr.length; i++){
+        let current = arr[i].name.toLowerCase();
+        let j = i - 1;
+
+        while (j >= 0 && arr[j].name.toLowerCase() > current){
+            [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+            j--;
+        }
+    }
     return arr;
 };
 
