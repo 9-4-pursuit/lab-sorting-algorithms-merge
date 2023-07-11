@@ -38,7 +38,14 @@ const catArtSortByPriceA = () => {};
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = () => {};
+const mySortFunction = () => {
+
+
+
+
+
+  
+};
 
 module.exports = {
   sortNumsA,
