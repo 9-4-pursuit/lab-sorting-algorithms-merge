@@ -15,11 +15,32 @@ const sortNumsA = (nums) => {
     nums[j + 1] = current;
   }
   return nums;
+
+  // return nums.sort((a, b) => a - b);
+
 };
 
 
+
 // sort numbers in descending order
-const sortNumsD = () => {};
+const sortNumsD = (nums) => {
+  for (let i = 1; i < nums.length; i++) {
+    let current = nums[i];
+    let j = i - 1;
+
+    while (j >= 0 && nums[j] < current) {
+      nums[j + 1] = nums[j];
+      j--;
+    }
+
+    nums[j + 1] = current;
+  }
+  return nums;
+
+//  return nums.sort((a, b) => b - a);
+};
+
+
 
 // sort words in ascending order case sensitive
 const sortWordsA = () => {};
