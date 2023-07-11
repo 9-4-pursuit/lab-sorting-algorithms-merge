@@ -121,6 +121,16 @@ const catArtSortDesginedByA = (arr) => {
 
 // sort catArt by price
 const catArtSortByPriceA = (arr) => {
+    for (let i = 1; i < arr.length; i++){
+        let current = (typeof arr[i].price === "string" && arr[i].price.includes("♇♇")) ? Number(arr[i].price.substring(2)) * 10 : Number(arr[i].price);
+        console.log(current)
+        let j = i - 1;
+
+        while (j >= 0 && ((typeof arr[j].price === "string" && arr[j].price.includes("♇♇")) ? Number(arr[j].price.substring(2)) * 10 : Number(arr[j].price)) > current){
+            [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+            j--;
+        }
+    }
     return arr;
 };
 
