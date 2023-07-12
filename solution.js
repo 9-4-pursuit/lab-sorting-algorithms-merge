@@ -142,7 +142,25 @@ const catArtSortByPriceA = (arr) => {
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = (arr, order) => {
+const mySortFunction = (arr, order = "a") => {
+    for (let i = 1; i < arr.length; i++){
+        let current = arr[i];
+        let j = i - 1;
+
+        //descending
+        if (order === "d"){
+            while (j >= 0 && arr[j] < current){
+                [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+                j--;
+            }
+        } else {
+        //ascending
+            while (j >= 0 && arr[j] > current){
+                [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+                j--;
+            }
+        }
+    }
     return arr;
 };
 
