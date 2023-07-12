@@ -100,8 +100,18 @@ const sortProductPriceD = (arr) => {
 
 // sort products by price, then by name, ascending order
 const sortProducsPriceNameA = (arr) => {
-    sortProductNamesA(arr);
-    sortProductPriceA(arr);
+    for (let i = 1; i < arr.length; i++){
+        let currentPrice = arr[i].price;
+        let currentName = arr[i].name
+        let j = i - 1;
+
+        while (j >= 0 && (arr[j].price > currentPrice || (arr[j].price === currentPrice && arr[j].name > currentName))){
+            [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+            j--;
+        }
+    }
+    // sortProductNamesA(arr);
+    // sortProductPriceA(arr);
     return arr;
 };
 
