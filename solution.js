@@ -19,7 +19,7 @@ const sortWordsD = (words) => {
   return words.sort((a, b) => {
     a = a.toLowerCase();
     b = b.toLowerCase();
-    if (a < b) return 1;
+    if (b > a) return 1;
     if (a > b) return -1;
     return 0
   })
@@ -37,7 +37,13 @@ const sortProductNamesA = (products) => {
 };
 
 // sort products by price, ascending order
-const sortProductPriceA = () => {};
+const sortProductPriceA = (products) => {
+  return products.sort((a, b) => {
+    a = a.price;
+    b = b.price;
+    return a - b;
+  })
+};
 
 // sort products by price, descending order
 const sortProductPriceD = () => {};
