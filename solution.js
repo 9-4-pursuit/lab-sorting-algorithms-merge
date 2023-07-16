@@ -43,16 +43,84 @@ const sortNumsD = (nums) => {
 
 
 // sort words in ascending order case sensitive
-const sortWordsA = () => {};
+const sortWordsA = (words) => {
+  let sorted = false;
+
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] > words[i + 1]) {
+        sorted = false;
+        [words[i], words[i + 1]] = [words[i + 1], words[i]];
+      }
+    }
+  }
+
+  return words;
+};
 
 // sort words in descending order case insensitive
-const sortWordsD = () => {};
+const sortWordsD = (words) => {
+  let sorted = false;
+
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < words.length - 1; i++) {
+      if (words[i].toLowerCase() < words[i + 1].toLowerCase()) {
+        sorted = false;
+        [words[i], words[i + 1]] = [words[i + 1], words[i]];
+      }
+    }
+  }
+
+  return words;
+};
 
 // sort products by name, ascending order case insensitive
-const sortProductNamesA = () => {};
+const sortProductNamesA = (products) => {
+  let n = products.length;
+
+  while (n > 1) {
+    let sorted = true;
+
+    for (let i = 0; i < n - 1; i++) {
+      const productNameA = products[i].name.toLowerCase();
+      const productNameB = products[i + 1].name.toLowerCase();
+
+      if (productNameA > productNameB) {
+        [products[i], products[i + 1]] = [products[i + 1], products[i]];
+        sorted = false;
+      }
+    }
+
+    if (sorted) {
+      // If no swaps were made in this pass, the array is sorted, and we can break the loop.
+      break;
+    }
+
+    n--; // Reduce the effective length of the array in each iteration
+  }
+
+  return products;
+};
 
 // sort products by price, ascending order
-const sortProductPriceA = () => {};
+const sortProductPriceA = (price) => {
+ 
+  for (let i = 1; i < price.length; i++) {
+    let current = price[i];
+    let j = i - 1;
+
+    while (j >= 0 && price[j].price > current.price) {
+      price[j + 1] = price[j];
+      j--;
+    }
+
+    price[j + 1] = current;
+  }
+  return price;
+
+};
 
 // sort products by price, descending order
 const sortProductPriceD = () => {};
