@@ -196,7 +196,7 @@ describe("Sorting Practice", () => {
     ]);
   });
 
-  test("Sort catArt by designedBy, ascending", () => {
+  test("Sort catArt by designedBy, ascending order", () => {
     expect(catArtSortDesginedByA(catArt)).toStrictEqual([
       { designedBy: "", itemName: "Distressed Laundry Basket", price: 10.1 },
       {
@@ -233,7 +233,7 @@ describe("Sorting Practice", () => {
       { designedBy: "Tortie", itemName: "Dug Up Houseplant", price: 4 },
     ]);
   });
-  test("Sort catArt by price", () => {
+  test("Sort catArt by price, ascending order", () => {
     expect(catArtSortByPriceA(catArt)).toStrictEqual([
       { designedBy: "Mittens", itemName: "Chewed Plastic Bag", price: 1.1 },
       { designedBy: "Patches", itemName: "Tangled yarn", price: 2.02 },
