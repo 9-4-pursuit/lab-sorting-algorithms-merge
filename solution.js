@@ -93,7 +93,24 @@ const getPriceValue = (price) => {
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = () => {};
+const mySortFunction = (arr, order = "ascending") => {
+  const length = arr.length;
+
+  for (let i = 0; i < length - 1; i++) {
+    for (let j = 0; j < length - 1 - i; j++) {
+      if (
+        (order === "ascending" && arr[j] > arr[j + 1]) ||
+        (order === "descending" && arr[j] < arr[j + 1])
+      ) {
+        // Swap elements
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+
+  return arr;
+};
+
 
 module.exports = {
   sortNumsA,
