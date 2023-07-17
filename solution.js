@@ -123,7 +123,21 @@ const sortProductPriceA = (price) => {
 };
 
 // sort products by price, descending order
-const sortProductPriceD = () => {};
+const sortProductPriceD = (price) => {
+
+  for (let i = 1; i < price.length; i++) {
+    let current = price[i];
+    let j = i - 1;
+
+    while (j >= 0 && price[j].price < current.price) {
+      price[j + 1] = price[j];
+      j--;
+    }
+
+    price[j + 1] = current;
+  }
+  return price;
+};
 
 // sort products by price, then by name, ascending order
 const sortProducsPriceNameA = () => {};
