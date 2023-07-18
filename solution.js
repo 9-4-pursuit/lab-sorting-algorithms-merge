@@ -98,7 +98,41 @@ const catArtSortByPriceA = (catArt) => {
 // or try to implement merge sort
 // or look up another common sort algorithm (i.e. quicksort, ) and try your own implementation
 // Bonus add another argument that would allow the function to be used for ascending or descending order
-const mySortFunction = () => {};
+const mySortFunction = (array) => {
+  if (array.length <= 1) return array;
+  let pivot = array[0];
+  let left = array.filter(x => x < pivot);
+  let right = array.filter(x => x > pivot);
+  return [...mySortFunction(left), pivot, ...mySortFunction(right)]
+
+  // if (left >= right) return;
+
+  // let pivotIndex = partition(array, left, right);
+  // mySortFunction(array, left, pivotIndex - 1);
+  // mySortFunction(array, pivotIndex + 1, right);
+
+  // return array;
+};
+
+// function partition(array, left, right) {
+//   let pivotValue = array[right];
+//   let partitionIndex = left;
+
+//   for (let i = left; i < right; i++) {
+//     if (array[i] < pivotValue) {
+//       swap(array, i, partitionIndex);
+//       partitionIndex++;
+//     }
+//   }
+
+//   swap(array, right, partitionIndex);
+// }
+
+// function swap(array, firstIndex, secondIndex) {
+//   let temp = array[firstIndex];
+//   array[firstIndex] = array[secondIndex];
+//   array[secondIndex] = temp;
+// }
 
 module.exports = {
   sortNumsA,
