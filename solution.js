@@ -14,12 +14,32 @@ const sortWordsA = (words) => words.sort();
 
 // sort words in descending order case insensitive
 //const sortWordsD = () => {};
-const sortWordsD = (words) => words.sort((a, b) => b.toLowerCase().localeCompare(a.toLowerCase()));
+const sortWordsD = (words) => words.sort((a, b) => {
+  const wordA = a.toLowerCase();
+  const wordB = b.toLowerCase();
+  if (wordA < wordB) {
+    return 1;
+  } else if (wordA > wordB) {
+    return -1;
+  } else {
+    return 0;
+  }
+});
 
 // sort products by name, ascending order case insensitive
 // const sortProductNamesA = () => {};
-const sortProductNamesA = (products) => products.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+const sortProductNamesA = (products) => products.sort((a, b) => {
+  const nameA = a.name.toLowerCase();
+  const nameB = b.name.toLowerCase();
 
+  if (nameA < nameB) {
+    return -1;
+  } else if (nameA > nameB) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
 
 // sort products by price, ascending order
 //const sortProductPriceA = () => {};
@@ -33,14 +53,34 @@ const sortProductPriceD = (products) => products.sort((a, b) => b.price - a.pric
 //const sortProducsPriceNameA = () => {};
 const sortProducsPriceNameA = (products) => products.sort((a, b) => {
   if (a.price === b.price) {
-    return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    } else if (nameA > nameB) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
   return a.price - b.price;
 });
 
 // sort catArt by designed by
 // const catArtSortDesginedByA = () => {};
-const catArtSortDesginedByA = (catArt) => catArt.sort((a, b) => a.designedBy.localeCompare(b.designedBy));
+const catArtSortDesginedByA = (catArt) => catArt.sort((a, b) => {
+  const nameA = a.designedBy.toLowerCase();
+  const nameB = b.designedBy.toLowerCase();
+
+  if (nameA < nameB) {
+    return -1;
+  } else if (nameA > nameB) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+
 
 // sort catArt by price
 // const catArtSortByPriceA = () => {};
