@@ -159,26 +159,31 @@ const catArtSortDesginedByA = (catArt) => {
 
 // sort catArt by price
 const catArtSortByPriceA = (catArt) => {
-  // Create a copy of the catArt array to avoid modifying the original data
-  const catArtCopy = catArt.map((item) => ({ ...item }));
+  const sortedCatArt = [...catArt]; // Create a copy of the original array
 
-  // Convert prices to numeric values and round to two decimal places before sorting
-  catArtCopy.forEach((item) => {
-    if (typeof item.price === "string") {
-      // Remove non-numeric characters (like "♇") from the price string and parse as a float
-      item.price = parseFloat(item.price.replace(/[^0-9.-]/g, ""));
-    } else if (typeof item.price !== "number") {
-      // Set invalid price values to 0
-      item.price = 0;
+  // Helper function to convert the price to a numeric value
+  const convertPriceToNumber = (price) => {
+    if (typeof price === "string") {
+      const numericPart = price.match(/[\d.]+/);
+      if (numericPart) {
+        // Extract the numeric part and parse it as a float
+        return parseFloat(numericPart[0]);
+      }
     }
+    return price; // If it's not a string or doesn't contain special characters, return it as is
+  };
 
-    // Round the price to two decimal places
-    item.price = parseFloat(item.price.toFixed(2));
+  sortedCatArt.sort((a, b) => {
+    const priceA = convertPriceToNumber(a.price);
+    const priceB = convertPriceToNumber(b.price);
+    return priceA - priceB;
   });
 
-  catArtCopy.sort((a, b) => a.price - b.price);
-  return catArtCopy;
+  return sortedCatArt;
 };
+
+
+
 
 
 
