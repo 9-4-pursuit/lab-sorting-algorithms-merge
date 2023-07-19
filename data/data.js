@@ -26,12 +26,12 @@ const catArt = [
   {
     itemName: "Cardboard Box with Chewed Edges",
     designedBy: "Chewy",
-    price: "♇♇7",
+    price: "7",
   },
   {
     itemName: "Fur-Lined Cardboard Box",
     designedBy: "Fluffy",
-    price: "♇♇3",
+    price: "3",
   },
   {
     itemName: "Dug Up Houseplant",
@@ -41,12 +41,12 @@ const catArt = [
   {
     itemName: "Fur-Lined Track Pants",
     designedBy: "Fluffy",
-    price: "♇♇5",
+    price: "5",
   },
   {
     itemName: "Cardboard Box with Chewed Edges",
     designedBy: "Chewy",
-    price: "♇♇7",
+    price: "7",
   },
   {
     itemName: "Fur-Lined Pillowcase",
@@ -61,7 +61,7 @@ const catArt = [
   {
     itemName: "Cardboard Box with Chewed Edges",
     designedBy: "Chewy",
-    price: "♇♇7",
+    price: "7",
   },
   {
     itemName: "Shredded Newspaper",
