@@ -128,21 +128,27 @@ const catArtSortDesginedByA = (arr) => {
 };
 
 // sort catArt by price
+const findPluto = money => {
+  let regex = /♇♇/g 
+   if (regex.test(money)){
+     return money[2] * 10
+   } else {
+     return parseInt(money)
+   }
+ }
 const catArtSortByPriceA = (arr) => {
-
   for (let i = 1; i < arr.length; i++) {
-      let current = arr[i]
-      let j = i - 1
-      while(j >= 0 && current.price > arr[j].price){
-          arr[j+1] = arr[j]
-          j--
-      }
-      arr[j+1] = current
+    let current = arr[i]
+    let j = i - 1
+    while(j >= 0 &&  findPluto(current.price) < findPluto(arr[j].price) ){
+      arr[j+1] = arr[j]
+      j--
+    }
+    arr[j+1] = current
   }
-  return arr
-
-
+  return arr  
 };
+
 
 // Create your own sort function
 // it should sort in ascending order
