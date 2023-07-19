@@ -202,25 +202,25 @@ describe("Sorting Practice", () => {
       {
         designedBy: "Chewy",
         itemName: "Cardboard Box with Chewed Edges",
-        price: "♇♇7",
+        price: "7",
       },
       {
         designedBy: "Chewy",
         itemName: "Cardboard Box with Chewed Edges",
-        price: "♇♇7",
+        price: "7",
       },
       {
         designedBy: "Chewy",
         itemName: "Cardboard Box with Chewed Edges",
-        price: "♇♇7",
+        price: "7",
       },
       { designedBy: "Chips", itemName: "Shredded Newspaper", price: 8.8 },
       {
         designedBy: "Fluffy",
         itemName: "Fur-Lined Cardboard Box",
-        price: "♇♇3",
+        price: "3",
       },
-      { designedBy: "Fluffy", itemName: "Fur-Lined Track Pants", price: "♇♇5" },
+      { designedBy: "Fluffy", itemName: "Fur-Lined Track Pants", price: "5" },
       { designedBy: "Fluffy", itemName: "Fur-Lined Pillowcase", price: 6 },
       { designedBy: "Fluffy", itemName: "Fur-Lined Pillowcase", price: "6" },
       { designedBy: "Mittens", itemName: "Chewed Plastic Bag", price: 1.1 },
@@ -245,23 +245,23 @@ describe("Sorting Practice", () => {
       {
         designedBy: "Fluffy",
         itemName: "Fur-Lined Cardboard Box",
-        price: "♇♇3",
+        price: "3",
       },
-      { designedBy: "Fluffy", itemName: "Fur-Lined Track Pants", price: "♇♇5" },
+      { designedBy: "Fluffy", itemName: "Fur-Lined Track Pants", price: "5" },
       {
         designedBy: "Chewy",
         itemName: "Cardboard Box with Chewed Edges",
-        price: "♇♇7",
-      },
-      {
-        designedBy: "Chewy",
-        itemName: "Cardboard Box with Chewed Edges",
-        price: "♇♇7",
+        price: "7",
       },
       {
         designedBy: "Chewy",
         itemName: "Cardboard Box with Chewed Edges",
-        price: "♇♇7",
+        price: "7",
+      },
+      {
+        designedBy: "Chewy",
+        itemName: "Cardboard Box with Chewed Edges",
+        price: "7",
       },
       {
         designedBy: "Mocha",
